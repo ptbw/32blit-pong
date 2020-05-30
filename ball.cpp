@@ -16,7 +16,9 @@ namespace {
 }
 
 // Ball dimensions.
-const int Ball::LENGTH = 10;
+const int Ball::LENGTH = 4;
+
+const int Ball::SPEED = 4;
 
 Ball::Ball(int x, int y) {
     // Ball status.
@@ -31,7 +33,7 @@ Ball::Ball(int x, int y) {
     dy = 0;
 
     bounce = false;
-    speed = 8;
+    speed = SPEED;
     angle = 0.0f;
     hits = 0;
     predicted_y = 0;
@@ -113,6 +115,6 @@ void Ball::reset() {
     status = READY;
 
     // Speed and hit counter are reset to their initial positions.
-    speed = 8;
+    speed = SPEED;
     hits = 0;
 }

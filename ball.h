@@ -16,6 +16,9 @@ class Ball {
 
         // Ball dimensions
         static const int LENGTH;
+        
+        // Ball default speed
+        static const int SPEED;
 
         // Ball position
         int x;

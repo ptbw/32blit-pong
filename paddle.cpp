@@ -4,8 +4,8 @@
 #include "ball.h"
 #include "pong.h"
 
-const int Paddle::HEIGHT = 60;
-const int Paddle::WIDTH = 10;
+const int Paddle::HEIGHT = 50;
+const int Paddle::WIDTH = 4;
 
 Paddle::Paddle(int new_x, int new_y) {
     x = new_x;
@@ -76,9 +76,9 @@ void Paddle::AI(Ball *ball) {
     if (ball->x < SCREEN_WIDTH*3/5 && ball->dx < 0) {
         // Follow the ball.
         if (y + (HEIGHT - ball->LENGTH)/2 < ball->predicted_y-2)
-            add_to_y(ball->speed/8 * 5);
+            add_to_y(ball->speed/Ball::SPEED * 5);
         else if (y + (HEIGHT - ball->LENGTH)/2 > ball->predicted_y+2)
-            add_to_y(-(ball->speed/8 * 5));
+            add_to_y(-(ball->speed/Ball::SPEED * 5));
 
     // Ball is anywhere on the screen but going right.
     } else if (ball->dx >= 0) {

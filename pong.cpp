@@ -166,15 +166,15 @@ void update(uint32_t time_ms) {
     uint16_t pressed = changed & buttons;
     uint16_t released = changed & ~buttons;    
     
-	if((pressed & Button::A) && (ball->status == ball->READY)) {
+	if(pressed && (buttons & Button::A) && (ball->status == ball->READY)) {
 		ball->status = ball->LAUNCH;
 	}
 	
 	if(buttons & Button::DPAD_UP) {
-		right_paddle->add_to_y(-10);
+		right_paddle->add_to_y(-5);
 	}
 	else if(buttons & Button::DPAD_DOWN) {
-		right_paddle->add_to_y(10);
+		right_paddle->add_to_y(5);
 	}
 	
     // AI paddle movement.
