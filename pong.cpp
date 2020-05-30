@@ -46,7 +46,8 @@ void buffCallBack(void *);    //Declare our callback here instead of putting the
 static uint32_t wavSize = 0;
 static uint16_t wavPos = 0;
 static uint16_t wavSampleRate = 0;
-static const uint16_t *wavSample;
+//static const uint16_t *wavSample;
+static unsigned char *wavSample;
 
 /* setup */
 void init() 
@@ -84,23 +85,23 @@ void init()
 
 void play_paddle_hit()
 {
-	wavSample = paddle_hit_wav;     // Set sample to the array in glass.h
-	wavSize = paddle_hit_wav_len;   // Set the array length to the value in glass.h
+	wavSample = paddle_hit_raw;     // Set sample to the array in glass.h
+	wavSize = paddle_hit_raw_len;   // Set the array length to the value in glass.h
 	channels[0].trigger_attack();   // Start the playback.
 }
 
 void play_score_update()
 {
-	wavSample = score_update_wav;
-	wavSize = score_update_wav_len;
+	wavSample = score_update_raw;
+	wavSize = score_update_raw_len;
 	channels[0].trigger_attack();
 }
 
 void play_wall_hit()
 {
-	wavSample = wall_hit_wav;
-	wavSize = wall_hit_wav_len;
-	channels[0].trigger_attack();
+    wavSample = wall_hit_raw;
+    wavSize = wall_hit_raw_len; 
+    channels[0].trigger_attack();
 }	
 	
 

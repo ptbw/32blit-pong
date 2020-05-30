@@ -1,7 +1,6 @@
 // Copyright [2015] <Chafic Najjar>
 
 #include "paddle.h"
-
 #include "ball.h"
 #include "pong.h"
 
