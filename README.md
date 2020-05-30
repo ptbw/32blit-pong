@@ -38,7 +38,7 @@ make
 ```
 mkdir build.stm32
 cd build.stm32
-cmake … -DCMAKE_TOOLCHAIN_FILE=~/32blit-beta/32blit.toolchain    # or correct location
+cmake .. -DCMAKE_TOOLCHAIN_FILE=~/32blit-beta/32blit.toolchain    # or correct location
 make
 make pong.flash          # with 32Blit plugged in
 ```
